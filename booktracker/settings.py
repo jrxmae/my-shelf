@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY", "f941r6y@*h3cym@i31gzuq@#-&a3hd@lal=n1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['8000-jrxmae-myshelf-m15pn6o4xxu.ws-eu117.gitpod.io','.herokuapp.com']
+ALLOWED_HOSTS = ['8000-jrxmae-myshelf-m15pn6o4xxu.ws-eu117.gitpod.io','.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -88,6 +88,12 @@ WSGI_APPLICATION = 'booktracker.wsgi.application'
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://*.codeinstitute-ide.net/",
+    "https://*.herokuapp.com",
+    "https://8000-jrxmae-myshelf-m15pn6o4xxu.ws-eu117.gitpod.io",
+]
 
 
 # Password validation
